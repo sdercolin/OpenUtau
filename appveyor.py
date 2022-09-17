@@ -23,7 +23,8 @@ def write_appcast(appcast_os, appcast_rid, appcast_file):
                 sparkle:signature="" />
     </item>
 </channel>
-</rss>''' % (appcast_ver, datetime.now().strftime("%a, %d %b %Y %H:%M:%S %z"),
+</rss>''' % (appcast_ver,
+             datetime.now().astimezone().strftime("%a, %d %b %Y %H:%M:%S %z"),
              appcast_file, appcast_ver, appcast_ver, appcast_os)
 
     with open("appcast.%s.xml" % (appcast_rid), 'w') as f:
